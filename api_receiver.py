@@ -1,7 +1,11 @@
+import os
+from dotenv import load_dotenv
 import requests
 
 
-API_KEY = "API_KEY"
+load_dotenv()
+
+API_KEY = os.getenv("API_KEY")
 
 
 async def get_data(city: str):
