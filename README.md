@@ -1,24 +1,39 @@
-# Установка
+# WeatherChecker
 
-### 1. Клонируйте репозиторий:
+WeatherChecker is an application for checking the weather, providing the user with up-to-date weather information for a given city.
 
-Для начала клонируйте репозиторий на свой локальный компьютер:
+## Installation
 
-bash git clone https://github.com/MaksimSamusik/WeatherChecker.git
+### 1. Clone the repository:
 
-### 2. Перейдите в каталог проекта:
+To begin, clone the repository to your local machine:
+
+git clone https://github.com/MaksimSamusik/WeatherChecker.git
+
+### 2. Navigate to the project directory:
 
 cd WeatherChecker
 
-### 3. Создайте и активируйте виртуальное окружение:
+### 3. Create and activate a virtual environment:
 
 python3 -m venv .venv
 
-### 4. Установите зависимости:
+Activate the virtual environment:
+
+On Linux/MacOS:
+
+source .venv/bin/activate
+
+On Windows:
+
+.venv\Scripts\activate
+
+### 4. Install dependencies:
+Install the required dependencies for the project:
 
 pip install -r requirements.txt
 
-### 5. Создайте файл .env в корне проекта и добавьте следующие строки:
+### 5. Create a .env file in the root of the project and add the following lines:
 
 POSTGRES_USER=your_username
 POSTGRES_PASSWORD=your_password
@@ -27,35 +42,35 @@ POSTGRES_HOST=db
 POSTGRES_PORT=5432
 WEATHER_API_KEY=your_weather_api_key
 
-Замените your_username, your_password, your_db_name на актуальные значения для вашей базы данных.
-WEATHER_API_KEY — это ключ для доступа к API погоды. Получите его, зарегистрировавшись на OpenWeather.
+Replace your_username, your_password, your_db_name with the actual values for your database.
+WEATHER_API_KEY is the key for accessing the weather API. Obtain it by registering on OpenWeather.
 
-### 6. Настройка Docker ( По желанию):
-Если вы хотите развернуть приложение с использованием Docker, используйте следующие шаги:
+### 6. Docker setup (Optional):
+If you want to deploy the app using Docker, follow these steps:
 
-1) Создайте Docker образ для вашего приложения:
+Create a Docker image for your app:
 
-docker build -t weatherchecker .
+docker build -t weatherchecker
 
-2)Запустите контейнер:
+Run the container:
 
 docker run -d -p 8000:8000 --name weatherchecker weatherchecker
 
-3) Используйте docker-compose для работы с многоконтейнерными приложениями, если требуется.
+Use docker-compose for working with multi-container applications if needed.
 
-# Использование
+## Usage
 
-1) Запустите приложения:
+### 1. Run the application:
+To run the app, use the following command:
 
 uvicorn main:app --reload
 
-2) Введите в адрессную строку вашего браузера
- http://127.0.0.1:8000/main
+### 2. Enter the following URL in your browser:
 
-3) Введите в поле ввода город и нажмите кнопку "Посмотреть погоду"
-Вам выведится информация о погоде в выбранном городе, а также история ваших запросов
+http://127.0.0.1:8000/main
 
+### 3. Enter the city name in the input field and click the "Check Weather" button. The weather information for the selected city, along with the history of your queries, will be displayed.
 
-# Примечания:
-Приложение использует PostgreSQL для хранения информации о запросах и пользователях.
-Перед использованием проверьте, что база данных настроена корректно и что все зависимости установлены.
+## Notes:
+The application uses PostgreSQL to store information about queries and users.
+Before use, make sure that the database is set up correctly and all dependencies are installed.
