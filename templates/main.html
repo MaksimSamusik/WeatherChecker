@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌤 WeatherChecker</h1>
+        <form method="post">
+            <input type="text" name="city" placeholder="Enter the name of city"
+                   pattern="^[A-Za-zА-Яа-яЁё -]+$"
+                   title="Only letters, spaces, and hyphens allowed"
+                   minlength="2" maxlength="50" required>
+            <button type="submit">🔍 Get the weather</button>
+        </form>
+
+        {% if error %}
+        <div class="error">
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+
+        {% if weather %}
+        <div class="weather-card">
+            <h3>The weather in {{ weather.city }}</h3>
+            <p><strong>🌡 Temperature:</strong> {{ weather.temp }}°C</p>
+            <p><strong>📈 Max:</strong> {{ weather.temp_max }}°C</p>
+            <p><strong>📉 Min:</strong> {{ weather.temp_min }}°C</p>
+            <p><strong>🥶 Feels like:</strong> {{ weather.feels_like }}°C</p>
+            <p><strong>💨 Wind's speed:</strong> {{ weather.wind_speed }} м/с</p>
+        </div>
+        {% endif %}
+
+        {% if history %}
+        <div class="history">
+            <h2>📜 Search history</h2>
+            <ul>
+                {% for item in history %}
+                <li>
+                    <strong>{{ item.city }}</strong> - {{ item.temp }}°C ({{ item.query_timestamp.strftime('%Y-%m-%d %H:%M') }})
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

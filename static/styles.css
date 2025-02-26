@@ -1,0 +1,130 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Контейнер */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+}
+
+/* Заголовок */
+h1 {
+    color: #333;
+}
+
+/* Форма */
+form {
+    margin: 20px 0;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    border: 2px solid #6a89cc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+button {
+    padding: 10px 15px;
+    background: #6a89cc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #4a69bd;
+}
+
+/* Блок с результатом */
+.weather-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    text-align: left;
+}
+
+.weather-card h3 {
+    margin: 0 0 10px;
+    color: #4a69bd;
+}
+
+.weather-card p {
+    margin: 5px 0;
+}
+
+/* Ошибки */
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.history {
+    margin-top: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: left;
+}
+
+.history h2 {
+    color: #4a69bd;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.history ul {
+    list-style: none;
+    padding: 0;
+}
+
+.history li {
+    padding: 5px 0;
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+.history li:last-child {
+    border-bottom: none;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+input:valid {
+    border: 2px solid green;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 10px;
+    background: #ffe5e5;
+    border: 1px solid red;
+    border-radius: 5px;
+    text-align: center;
+}
